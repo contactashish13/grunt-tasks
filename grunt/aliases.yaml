@@ -1,0 +1,22 @@
+#Check code of the theme
+check:
+  - 'newer:imagemin'
+  - 'phpcbf'
+  - 'newer:postcss:build'
+  - 'makepot'
+  - 'newer:addtextdomain:main'
+  - 'check:css'
+'check:css':
+  - 'newer:wpcss'
+'check:php':
+  - 'phplint'
+  - 'phpcs'
+  - 'phpunit'
+'check:js':
+  - 'jshint'
+'check:i18n':
+  - 'checktextdomain'
+
+# Default task
+default:
+  - check
